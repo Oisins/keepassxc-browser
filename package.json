@@ -1,6 +1,6 @@
 {
   "name": "keepassxc-browser",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "KeePassXC-Browser",
   "scripts": {
     "build": "mkdir -p build && rm -f build/keepassxc-browser-*.zip && cd keepassxc-browser && zip -rq ../build/keepassxc-browser-$(cat manifest.json | jq -r '.version').zip *",
