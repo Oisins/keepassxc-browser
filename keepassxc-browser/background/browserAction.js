@@ -240,7 +240,7 @@ browserAction.setRememberPopup = function(tabId, username, password, url, userna
         browserAction.show(null, {'id': id});
 
         if (page.settings.showNotifications) {
-            showNotification('Create or modify the credentials by clicking on the extension icon.');
+            showNotification(tr('rememberCredentialsPopup'));
         }
     });
 };

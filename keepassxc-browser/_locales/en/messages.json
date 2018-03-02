@@ -1,0 +1,429 @@
+{
+    "extensionDescription": {
+        "message": "KeePassXC integration for modern web browsers",
+        "description": "Name of the extension."
+    },
+    "contextMenuFillUsernameAndPassword": {
+        "message": "Fill User + Pass",
+        "description": "Context menu item for filling both username and password."
+    },
+    "contextMenuFillPassword": {
+        "message": "Fill Pass Only",
+        "description": "Context menu item for filling password."
+    },
+    "contextMenuFillTOTP": {
+        "message": "Insert a TOTP",
+        "description": "Context menu item for filling Time-based One Time Password."
+    },
+    "contextMenuShowPasswordGeneratorIcons": {
+        "message": "Show Password Generator Icons",
+        "description": "Show password generator icon on every password input field."
+    },
+    "contextMenuSaveCredentials": {
+        "message": "Save credentials",
+        "description": "Save credentials using the extension popup icon."
+    },
+    "rememberCredentialsPopup": {
+        "message": "Create or modify the credentials by clicking on the extension icon.",
+        "description": "Notification text when saving credentials from the context menu."
+    },
+    "multipleCredentialsDetected": {
+        "message": "Multiple credentials detected. Click on the extension icon to choose the correct one.",
+        "description": "Notification when HTTP Authentication has multiple credentials detected."
+    },
+
+    "errorMessageUnknown": {
+        "message": "Unknown error.",
+        "description": "Unknown error."
+    },
+    "errorMessageDatabaseNotOpened": {
+        "message": "Database not opened.",
+        "description": "Database not opened."
+    },
+    "errorMessageDatabaseHash": {
+        "message": "Database hash not received.",
+        "description": "Database hash not received."
+    },
+    "errorMessageClientPublicKey": {
+        "message": "Client public key not reveiced.",
+        "description": "Client public key not reveiced."
+    },
+    "errorMessageDecrypt": {
+        "message": "Cannot decrypt message.",
+        "description": "Cannot decrypt message."
+    },
+    "errorMessageTimeout": {
+        "message": "Timeout or not connected to KeePassXC.",
+        "description": "Timeout or not connected to KeePassXC."
+    },
+    "errorMessageCancelled": {
+        "message": "Action cancelled or denied.",
+        "description": "Action cancelled or denied."
+    },
+    "errorMessageEncrypt": {
+        "message": "Cannot encrypt message or public key not found. Is native messaging or support for your browser enabled in KeePassXC?",
+        "description": "Cannot encrypt message or public key not found. Is native messaging or support for your browser enabled in KeePassXC?"
+    },
+    "errorMessageAssociate": {
+        "message": "KeePassXC association failed, try again.",
+        "description": "KeePassXC association failed, try again."
+    },
+    "errorMessageKeyChange": {
+        "message": "Key change was not successful.",
+        "description": "Key change was not successful."
+    },
+    "errorMessageEncryptionKey": {
+        "message": "Encryption key is not recognized",
+        "description": "Encryption key is not recognized"
+    },
+    "errorMessageSavedDatabases": {
+        "message": "No saved databases found.",
+        "description": "No saved databases found."
+    },
+    "errorMessageIncorrectAction": {
+        "message": "Incorrect action.",
+        "description": "Incorrect action."
+    },
+    "errorMessageEmptyMessage": {
+        "message": "Empty message received.",
+        "description": "Empty message received."
+    },
+    "errorMessageNoURL": {
+        "message": "No URL provided.",
+        "description": "No URL provided."
+    },
+    "errorMessageNoLogins": {
+        "message": "No logins found.",
+        "description": "No logins found."
+    },
+
+    "passwordGeneratorPlaceholder": {
+        "message": "Generated password",
+        "description": ""
+    },
+    "passwordGeneratorLabel": {
+        "message": " also fill in the next password-field",
+        "description": ""
+    },
+    "passwordGeneratorBits": {
+        "message": "123 Bits",
+        "description": ""
+    },
+    "passwordGeneratorTitle": {
+        "message": "Password Generator",
+        "description": ""
+    },
+    "passwordGeneratorGenerate": {
+        "message": "Generate",
+        "description": ""
+    },
+    "passwordGeneratorCopy": {
+        "message": "Copy",
+        "description": ""
+    },
+    "passwordGeneratorFillAndCopy": {
+        "message": "Fill & copy",
+        "description": ""
+    },
+    "passwordGeneratorAlert": {
+        "message": "The generated password is longer than the allowed length!\nIt has been cut to fit the length.\n\nPlease remember the new password!",
+        "description": ""
+    },
+    "passwordGeneratorGenerateText": {
+        "message": "Generate password",
+        "description": ""
+    },
+    "passwordGeneratorError": {
+        "message": "Cannot receive generated password.<br />Is KeePassXC opened?",
+        "description": ""
+    },
+
+    "defineDismiss": {
+        "message": "Dismiss",
+        "description": ""
+    },
+    "defineSkip": {
+        "message": "Skip",
+        "description": ""
+    },
+    "defineAgain": {
+        "message": "Again",
+        "description": ""
+    },
+    "defineConfirm": {
+        "message": "Confirm",
+        "description": ""
+    },
+    "defineAlreadySelected": {
+        "message": "For this page credential fields are already selected and will be overwritten.",
+        "description": ""
+    },
+    "defineDiscard": {
+        "message": "Discard selection",
+        "description": ""
+    },
+    "defineStringField": {
+        "message": "String field #",
+        "description": ""
+    },
+    "defineChooseUsername": {
+        "message": "1. Choose a username field",
+        "description": ""
+    },
+    "defineChoosePassword": {
+        "message": "2. Now choose a password field",
+        "description": ""
+    },
+    "defineConfirmSelection": {
+        "message": "3. Confirm selection",
+        "description": ""
+    },
+    "defineHelpText": {
+        "message": "Please confirm your selection or choose more fields as <em>String fields</em>.",
+        "description": ""
+    },
+
+    "username": {
+        "message": "Username",
+        "description": ""
+    },
+    "password": {
+        "message": "Password",
+        "description": ""
+    },
+
+    "credentialsNoUsername": {
+        "message": "- no username -",
+        "description": ""
+    },
+    "credentialsNoLoginsFound": {
+        "message": "No logins found.",
+        "description": ""
+    },
+    "credentialsMultipleFound": {
+        "message": "Error:\nMore than one login was found in KeePassXC!\nPress the KeePassXC-Browser icon for more options.",
+        "description": ""
+    },
+    "credentialsNoUsernameFound": {
+        "message": "Error:\nNo credentials for given username found.",
+        "description": ""
+    },
+    "fieldsFill": {
+        "message": "Error:\nCannot find fields to fill in.",
+        "description": ""
+    },
+    "fieldsNoPasswordField": {
+        "message": "Unable to find a password field",
+        "description": ""
+    },
+    "rememberNothingChanged": {
+        "message": "Could not detect changed credentials",
+        "description": ""
+    },
+
+    "popupTitle": {
+        "message": "KeePassXC - Popup",
+        "description": ""
+    },
+    "popupSettingsText": {
+        "message": " Settings",
+        "description": ""
+    },
+    "popupChooseCredentialsText": {
+        "message": " Choose own credential fields for this page",
+        "description": ""
+    },
+    "popupConnectButton": {
+        "message": " Connect",
+        "description": ""
+    },
+    "popupReconnectButton": {
+        "message": " Reconnect",
+        "description": ""
+    },
+    "popupRedetectButton": {
+        "message": " Redetect credential fields",
+        "description": ""
+    },
+    "popupReloadButton": {
+        "message": " Reload",
+        "description": ""
+    },
+    "popupReopenButton": {
+        "message": " Reopen database",
+        "description": ""
+    },
+    "popupErrorEncountered": {
+        "message": "KeePassXC-Browser has encountered an error:",
+        "description": ""
+    },
+    "popupUpdateAvailable": {
+        "message": "You use an old version of KeePassXC.",
+        "description": ""
+    },
+    "popupDownloadNewVersion": {
+        "message": "Please download the latest version from keepassxc.org",
+        "description": ""
+    },
+    "popupCheckingStatus": {
+        "message": " Checking status...",
+        "description": ""
+    },
+    "popupNotConfigured": {
+        "message": "KeePassXC-Browser has not been configured. Press the connect button to register and pair with KeePassXC.",
+        "description": ""
+    },
+    "popupNeedReconfigure": {
+        "message": "KeePassXC-Browser has been disconnected from KeePassXC.",
+        "description": ""
+    },
+    "popupNeedReconfigureMessage": {
+        "message": "Press the reconnect button to establish a new connection.",
+        "description": ""
+    },
+    "popupConfiguredNotAssociated": {
+        "message": "KeePassXC-Browser has not yet connected to KeePassXC but has been configured using the identifier:",
+        "description": ""
+    },
+    "popupConfiguredAndAssociated": {
+        "message": "KeePassXC-Browser is successfully connected to KeePassXC and has been configured using the following identifier:",
+        "description": ""
+    },
+
+    "optionsTitle": {
+        "message": "Settings | KeePassXC-Browser",
+        "description": ""
+    },
+    "optionsGeneralSettingsTab": {
+        "message": "General Settings",
+        "description": ""
+    },
+    "optionsConnectedDatabasesTab": {
+        "message": "Connected Databases",
+        "description": ""
+    },
+    "optionsSpecifiedFieldsTab": {
+        "message": "Specified credential fields",
+        "description": ""
+    },
+    "optionsAboutTab": {
+        "message": "About",
+        "description": ""
+    },
+    "optionsMenuGeneral": {
+        "message": "General",
+        "description": ""
+    },
+    "optionsMenuConnectedDatabases": {
+        "message": "Connected Databases",
+        "description": ""
+    },
+    "optionsMenuSpecifiedFields": {
+        "message": "Specified credential fields",
+        "description": ""
+    },
+    "optionsMenuAbout": {
+        "message": "About",
+        "description": ""
+    },
+    "optionsButtonSave": {
+        "message": " Save",
+        "description": ""
+    },
+    "optionsButtonUpdate": {
+        "message": " Check for updates",
+        "description": ""
+    },
+    "optionsLabelBlinkTime": {
+        "message": "Blink Time:",
+        "description": ""
+    },
+    "optionsLabelRedirectOffset": {
+        "message": "Redirect Offset:",
+        "description": ""
+    },
+    "optionsLabelRedirectAllowance": {
+        "message": "Redirect Allowance:",
+        "description": ""
+    },
+    "optionsCheckboxUsePasswordGenerator": {
+        "message": "Activate password generator.",
+        "description": ""
+    },
+    "optionsCheckboxAutoRetrieveCredentials": {
+        "message": "Automatically retrieve credentials.",
+        "description": ""
+    },
+    "optionsCheckboxAutoFillSingleEntry": {
+        "message": "Automatically fill-in single credentials entry.",
+        "description": ""
+    },
+    "optionsCheckboxAutoCompleteUsernames": {
+        "message": "Activate autocomplete for username fields.",
+        "description": ""
+    },
+    "optionsCheckboxShowNotifications": {
+        "message": "Show notifications.",
+        "description": ""
+    },
+    "optionsCheckboxAutoFillAndSend": {
+        "message": "Auto fill HTTP Auth dialogs and send them.",
+        "description": ""
+    },
+    "optionsRadioText": {
+        "message": "Check for updates of KeePassXC:",
+        "description": ""
+    },
+    "optionsRadioThreeDays": {
+        "message": " every 3 days",
+        "description": ""
+    },
+    "optionsRadioWeek": {
+        "message": " every week",
+        "description": ""
+    },
+    "optionsRadioMonth": {
+        "message": " every month",
+        "description": ""
+    },
+    "optionsRadioNever": {
+        "message": " never",
+        "description": ""
+    },
+    "optionsGeneralHelpText": {
+        "message": "If you just want to insert username + password into the fields where your focus is, press ",
+        "description": ""
+    },
+    "optionsGeneralHelpTextSecond": {
+        "message": "If you only want to insert the password, just press ",
+        "description": ""
+    },
+    "optionsCustomizeCommandsHelpText": {
+        "message": "You can customize these shortcuts on page ",
+        "descriptions": ""
+    },
+    "optionsBlinkTimeHelpText": {
+        "message": "What is the maximum time (ms) the icon should blink after detecting new credentials",
+        "description": ""
+    },
+    "optionsRedirectOffsetHelpText": {
+        "message": "What is the minimum time (ms) the icon should blink before deactivating due to page redirects.",
+        "description": ""
+    },
+    "optionsRedirectOffsetHelpTextSecond": {
+        "message": "-1 to only use Blink Time ignoring Redirect Allowance (old behavior)",
+        "description": ""
+    },
+    "optionsRedirectAllowanceHelpText": {
+        "message": "How many pages should the tab cycle through after the redirect offset before deactivating the icon",
+        "description": ""
+    },
+    "optionsUsePasswordGeneratorHelpText": {
+        "message": "For all password-fields there will be an icon added to generate a new password.",
+        "description": ""
+    },
+    "optionsUsePasswordGeneratorHelpTextSecond": {
+        "message": "It is generated by KeePassXC with the profile for automatically generated passwords for new entries.",
+        "description": ""
+    }
+}

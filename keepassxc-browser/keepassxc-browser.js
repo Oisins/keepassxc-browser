@@ -222,7 +222,7 @@ cipPassword.createDialog = function() {
         .attr('id', 'cip-genpw-textfield-password')
         .attr('type', 'text')
         .attr('aria-describedby', 'cip-genpw-quality')
-        .attr('placeholder', 'Generated password')
+        .attr('placeholder', tr('passwordGeneratorPlaceholder'))
         .addClass('genpw-text ui-widget-content ui-corner-all')
         .on('change keypress paste textInput input', function() {
             jQuery('#cip-genpw-btn-clipboard:first').removeClass('btn-success');
@@ -231,7 +231,7 @@ cipPassword.createDialog = function() {
         .addClass('genpw-input-group-addon')
         .addClass('b2c-add-on')
         .attr('id', 'cip-genpw-quality')
-        .text('123 Bits');
+        .text(tr('passwordGeneratorBits'));
     $inputGroup.append($textfieldPassword).append($quality);
 
     const $checkGroup = jQuery('<div>').addClass('genpw-input-group');
@@ -242,7 +242,7 @@ cipPassword.createDialog = function() {
     const $labelNextField = jQuery('<label>')
         .append($checkboxNextField)
         .addClass('cip-genpw-label')
-        .append(' also fill in the next password-field');
+        .append(tr('passwordGeneratorLabel'));
     $checkGroup.append($labelNextField);
 
     $inputDiv.append($inputGroup).append($checkGroup);
@@ -263,12 +263,12 @@ cipPassword.createDialog = function() {
         resizable: false,
         minWidth: 300,
         minHeight: 80,
-        title: 'Password Generator',
+        title: tr('passwordGeneratorTitle'),
         classes: {'ui-dialog': 'ui-corner-all'},
         buttons: {
             'Generate':
             {
-                text: 'Generate',
+                text: tr('passwordGeneratorGenerate'),
                 id: 'cip-genpw-btn-generate',
                 click: (e) => {
                     e.preventDefault();
@@ -281,7 +281,7 @@ cipPassword.createDialog = function() {
             },
             'Copy':
             {
-                text: 'Copy',
+                text: tr('passwordGeneratorCopy'),
                 id: 'cip-genpw-btn-clipboard',
                 click: (e) => {
                     e.preventDefault();
@@ -290,7 +290,7 @@ cipPassword.createDialog = function() {
             },
             'Fill & copy':
             {
-                text: 'Fill & copy',
+                text: tr('passwordGeneratorFillAndCopy'),
                 id: 'cip-genpw-btn-fillin',
                 click: (e) => {
                     e.preventDefault();
@@ -305,7 +305,7 @@ cipPassword.createDialog = function() {
                                 $password = $password.substring(0, field.attr('maxlength'));
                                 jQuery('input#cip-genpw-textfield-password:first').val($password);
                                 jQuery('#cip-genpw-btn-clipboard:first').removeClass('b2c-btn-success');
-                                alert('The generated password is longer than the allowed length!\nIt has been cut to fit the length.\n\nPlease remember the new password!');
+                                alert(tr('passwordGeneratorAlert'));
                             }
                         }
 
@@ -348,7 +348,7 @@ cipPassword.createIcon = function(field) {
         .addClass('kpxc')
         .addClass('cip-genpw-icon')
         .addClass($className)
-        .attr('title', 'Generate password')
+        .attr('title', tr('passwordGeneratorGenerateText'))
         .css('z-index', '9999')
         .css('width', $size)
         .css('height', $size)
@@ -432,7 +432,7 @@ cipPassword.callbackGeneratedPassword = function(entries) {
     }
     else {
         if (jQuery('div#cip-genpw-error:first').length === 0) {
-            jQuery('button#cip-genpw-btn-generate:first').after('<div style=\'block\' id=\'cip-genpw-error\'>Cannot receive generated password.<br />Is KeePassXC opened?<br /></div>');
+            jQuery('button#cip-genpw-btn-generate:first').after('<div style=\'block\' id=\'cip-genpw-error\'>' + tr('passwordGeneratorError') + '<br /></div>');
             jQuery('input#cip-genpw-textfield-password:first').parent().hide();
             jQuery('input#cip-genpw-checkbox-next-field:first').parent('label').hide();
             jQuery('button#cip-genpw-btn-generate').hide();
@@ -572,13 +572,13 @@ cipDefine.initDescription = function() {
     const $help = jQuery('<div>').addClass('b2c-chooser-help').attr('id', 'b2c-help');
     $description.append($help);
 
-    const $btnDismiss = jQuery('<button>').text('Dismiss').attr('id', 'b2c-btn-dismiss')
+    const $btnDismiss = jQuery('<button>').text(tr('defineDismiss')).attr('id', 'b2c-btn-dismiss')
         .addClass('btn').addClass('btn-danger')
         .click(function(e) {
             jQuery('div#b2c-backdrop').remove();
             jQuery('div#b2c-cipDefine-fields').remove();
         });
-    const $btnSkip = jQuery('<button>').text('Skip').attr('id', 'b2c-btn-skip')
+    const $btnSkip = jQuery('<button>').text(tr('defineSkip')).attr('id', 'b2c-btn-skip')
         .addClass('btn').addClass('btn-info')
         .css('margin-right', '5px')
         .click(function() {
@@ -593,7 +593,7 @@ cipDefine.initDescription = function() {
                 cipDefine.markAllStringFields(jQuery('#b2c-cipDefine-fields'));
             }
         });
-    const $btnAgain = jQuery('<button>').text('Again').attr('id', 'b2c-btn-again')
+    const $btnAgain = jQuery('<button>').text(tr('defineAgain')).attr('id', 'b2c-btn-again')
         .addClass('btn').addClass('btn-warning')
         .css('margin-right', '5px')
         .click(function(e) {
@@ -602,7 +602,7 @@ cipDefine.initDescription = function() {
             cipDefine.markAllUsernameFields(jQuery('#b2c-cipDefine-fields'));
         })
         .hide();
-    const $btnConfirm = jQuery('<button>').text('Confirm').attr('id', 'b2c-btn-confirm')
+    const $btnConfirm = jQuery('<button>').text(tr('defineConfirm')).attr('id', 'b2c-btn-confirm')
         .addClass('btn').addClass('btn-primary')
         .css('margin-right', '15px')
         .click(function(e) {
@@ -645,10 +645,10 @@ cipDefine.initDescription = function() {
     $description.append($btnDismiss);
 
     if (cip.settings['defined-credential-fields'] && cip.settings['defined-credential-fields'][document.location.href]) {
-        const $p = jQuery('<p>').html('For this page credential fields are already selected and will be overwritten.<br />');
+        const $p = jQuery('<p>').html(tr('defineAlreadySelected') + '<br />');
         const $btnDiscard = jQuery('<button>')
             .attr('id', 'btn-warning')
-            .text('Discard selection')
+            .text(tr('defineDiscard'))
             .css('margin-top', '5px')
             .addClass('btn')
             .addClass('btn-sm')
@@ -693,7 +693,7 @@ cipDefine.isFieldSelected = function($cipId) {
 cipDefine.markAllUsernameFields = function($chooser) {
     cipDefine.eventFieldClick = function(e) {
         cipDefine.selection.username = jQuery(this).data('cip-id');
-        jQuery(this).addClass('b2c-fixed-username-field').text('Username').unbind('click');
+        jQuery(this).addClass('b2c-fixed-username-field').text(tr('username')).unbind('click');
         cipDefine.prepareStep2();
         cipDefine.markAllPasswordFields(jQuery('#b2c-cipDefine-fields'));
     };
@@ -703,7 +703,7 @@ cipDefine.markAllUsernameFields = function($chooser) {
 cipDefine.markAllPasswordFields = function($chooser) {
     cipDefine.eventFieldClick = function(e) {
         cipDefine.selection.password = jQuery(this).data('cip-id');
-        jQuery(this).addClass('b2c-fixed-password-field').text('Password').unbind('click');
+        jQuery(this).addClass('b2c-fixed-password-field').text(tr('password')).unbind('click');
         cipDefine.prepareStep3();
         cipDefine.markAllStringFields(jQuery('#b2c-cipDefine-fields'));
     };
@@ -714,7 +714,7 @@ cipDefine.markAllStringFields = function($chooser) {
     cipDefine.eventFieldClick = function(e) {
         cipDefine.selection.fields[jQuery(this).data('cip-id')] = true;
         const count = Object.keys(cipDefine.selection.fields).length;
-        jQuery(this).addClass('b2c-fixed-string-field').text('String field #' + String(count)).unbind('click');
+        jQuery(this).addClass('b2c-fixed-string-field').text(tr('defineStringField') + String(count)).unbind('click');
         jQuery('button#b2c-btn-confirm:first').addClass('b2c-btn-primary').attr('disabled', false);
     };
     cipDefine.markFields($chooser, cipFields.inputQueryPattern + ', select');
@@ -745,7 +745,7 @@ cipDefine.prepareStep1 = function() {
     jQuery('div#b2c-cipDefine-fields').removeData('username');
     jQuery('div#b2c-cipDefine-fields').removeData('password');
     jQuery('div.b2c-fixed-field', jQuery('div#b2c-cipDefine-fields')).remove();
-    jQuery('div:first', jQuery('div#b2c-cipDefine-description')).text('1. Choose a username field');
+    jQuery('div:first', jQuery('div#b2c-cipDefine-description')).text(tr('defineChooseUsername'));
     jQuery('button#b2c-btn-skip:first').data('step', '1').show();
     jQuery('button#b2c-btn-confirm:first').hide();
     jQuery('button#b2c-btn-again:first').hide();
@@ -754,7 +754,7 @@ cipDefine.prepareStep1 = function() {
 cipDefine.prepareStep2 = function() {
     jQuery('div#b2c-help').text('').css('margin-bottom', 0);
     jQuery('div.b2c-fixed-field:not(.b2c-fixed-username-field)', jQuery('div#b2c-cipDefine-fields')).remove();
-    jQuery('div:first', jQuery('div#b2c-cipDefine-description')).text('2. Now choose a password field');
+    jQuery('div:first', jQuery('div#b2c-cipDefine-description')).text(tr('defineChoosePassword'));
     jQuery('button#b2c-btn-skip:first').data('step', '2');
     jQuery('button#b2c-btn-again:first').show();
 };
@@ -764,11 +764,11 @@ cipDefine.prepareStep3 = function() {
         jQuery('button#b2c-btn-confirm:first').removeClass('b2c-btn-primary').attr('disabled', true);
     }
 
-    jQuery('div#b2c-help').html('Please confirm your selection or choose more fields as <em>String fields</em>.').css('margin-bottom', '5px');
+    jQuery('div#b2c-help').html(tr('defineHelpText')).css('margin-bottom', '5px');
     jQuery('div.b2c-fixed-field:not(.b2c-fixed-password-field,.b2c-fixed-username-field)', jQuery('div#b2c-cipDefine-fields')).remove();
     jQuery('button#b2c-btn-confirm:first').show();
     jQuery('button#b2c-btn-skip:first').data('step', '3').hide();
-    jQuery('div:first', jQuery('div#b2c-cipDefine-description')).text('3. Confirm selection');
+    jQuery('div:first', jQuery('div#b2c-cipDefine-description')).text(tr('defineConfirmSelection'));
 };
 
 
@@ -1333,7 +1333,7 @@ cip.preparePageForMultipleCredentials = function(credentials) {
     cipAutocomplete.elements = [];
     let visibleLogin;
     for (let i = 0; i < credentials.length; i++) {
-        visibleLogin = (credentials[i].login.length > 0) ? credentials[i].login : '- no username -';
+        visibleLogin = (credentials[i].login.length > 0) ? credentials[i].login : tr('credentialsNoUsername');
         usernames.push(visibleLogin + ' (' + credentials[i].name + ')');
         const item = {
             label: visibleLogin + ' (' + credentials[i].name + ')',
@@ -1455,7 +1455,7 @@ cip.fillInFromActiveElement = function(suppressWarnings, passOnly = false) {
 
     if (passOnly) {
         if (!_f(combination.password)) {
-            const message = 'Unable to find a password field';
+            const message = tr('fieldsNoPasswordField');
             browser.runtime.sendMessage({
                 action: 'alert',
                 args: [message]
@@ -1538,7 +1538,7 @@ cip.setValueWithChange = function(field, value) {
 cip.fillIn = function(combination, onlyPassword, suppressWarnings) {
     // no credentials available
     if (cip.credentials.length === 0 && !suppressWarnings) {
-        const message = 'No logins found.';
+        const message = tr('credentialsNoLoginsFound');
         browser.runtime.sendMessage({
             action: 'alert',
             args: [message]
@@ -1571,7 +1571,7 @@ cip.fillIn = function(combination, onlyPassword, suppressWarnings) {
 
         if (!filledIn) {
             if (!suppressWarnings) {
-                const message = 'Error #101\nCannot find fields to fill in.';
+                const message = tr('fieldsFill');
                 browser.runtime.sendMessage({
                     action: 'alert',
                     args: [message]
@@ -1601,7 +1601,7 @@ cip.fillIn = function(combination, onlyPassword, suppressWarnings) {
 
         if (!filledIn) {
             if (!suppressWarnings) {
-                const message = 'Error #102\nCannot find fields to fill in.';
+                const message = tr('fieldsFill');
                 browser.runtime.sendMessage({
                     action: 'alert',
                     args: [message]
@@ -1655,8 +1655,7 @@ cip.fillIn = function(combination, onlyPassword, suppressWarnings) {
             // user has to select correct credentials by himself
             if (countPasswords > 1) {
                 if (!suppressWarnings) {
-                    const message = 'Error #105\nMore than one login was found in KeePassXC!\n' +
-                    'Press the KeePassXC-Browser icon for more options.';
+                    const message = tr('credentialsMultipleFound');
                     browser.runtime.sendMessage({
                         action: 'alert',
                         args: [message]
@@ -1665,7 +1664,7 @@ cip.fillIn = function(combination, onlyPassword, suppressWarnings) {
             }
             else if (countPasswords < 1) {
                 if (!suppressWarnings) {
-                    const message = 'Error #103\nNo credentials for given username found.';
+                    const message = tr('credentialsNoUsernameFound');
                     browser.runtime.sendMessage({
                         action: 'alert',
                         args: [message]
@@ -1675,8 +1674,7 @@ cip.fillIn = function(combination, onlyPassword, suppressWarnings) {
         }
         else {
             if (!suppressWarnings) {
-                    const message = 'Error #104\nMore than one login was found in KeePassXC!\n' +
-                    'Press the KeePassXC-Browser icon for more options.';
+                    const message = tr('credentialsMultipleFound');
                 browser.runtime.sendMessage({
                     action: 'alert',
                     args: [message]
@@ -1716,7 +1714,7 @@ cip.contextMenuRememberCredentials = function() {
     }
 
     if (!cip.rememberCredentials(usernameValue, passwordValue)) {
-        alert('Could not detect changed credentials.');
+        alert(tr('rememberNothingChanged'));
     }
 };
 

@@ -13,3 +13,7 @@ var showNotification = function(message) {
         'message': message
     });
 };
+
+function tr(key, params) {
+    return browser.i18n.getMessage(key, params);
+};

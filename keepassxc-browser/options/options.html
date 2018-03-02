@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Settings | KeePassXC-Browser</title>
+    <title data-i18n="optionsTitle"></title>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="bootstrap.min.css" />
       <link rel="stylesheet" href="options.css" />
@@ -17,34 +17,35 @@
 
       <nav class="navbar navbar-default">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#general-settings">General</a></li>
-          <li><a href="#connected-databases">Connected Databases</a></li>
-          <li><a href="#specified-fields">Specified credential fields</a></li>
-          <li><a href="#about">About</a></li>
+          <li class="active"><a href="#general-settings"><span data-i18n="optionsMenuGeneral"/></a></li>
+          <li><a href="#connected-databases"><span data-i18n="optionsMenuConnectedDatabases"/></a></li>
+          <li><a href="#specified-fields"><span data-i18n="optionsMenuSpecifiedFields"/></a></li>
+          <li><a href="#about"><span data-i18n="optionsMenuAbout"/></a></li>
         </ul>
       </nav>
 
       <!-- General Settings -->
       <div class="tab" id="tab-general-settings">
-        <h2>General Settings</h2>
+        <h2 data-i18n="optionsGeneralSettingsTab"></h2>
         <hr />
         <p>
-          If you just want to insert username + password into the fields where your focus is, press <code>Alt + Shift + U</code>.
+          <span data-i18n="optionsGeneralHelpText"></span><code>Alt + Shift + U</code>.
           <br />
-          If you only want to insert the password, just press <code>Alt + Shift + P</code>.
-          <span id="chrome-only">You can customize these shortcuts on <code>chrome://extensions/configureCommands</code> page</span>
+          <span data-i18n="optionsGeneralHelpTextSecond"></span><code>Alt + Shift + P</code>.
+          <br />
+          <span id="chrome-only"><span data-i18n="optionsCustomizeCommandsHelpText"></span><code>chrome://extensions/configureCommands</code></span>
         </p>
         <p>
           <div class="form-group">
-            <label for="blinkTimeout">Blink Time:</label>
+            <label for="blinkTimeout" data-i18n="optionsLabelBlinkTime"></label>
             <div class="control-group">
               <div class="input-append">
                 <input type="number" id="blinkTimeout" placeholder="7500" value="7500" />
-                <button class="btn btn-sm btn-primary" id="blinkTimeoutButton" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                <button class="btn btn-sm btn-primary" id="blinkTimeoutButton" type="button"><span class="glyphicon glyphicon-floppy-disk"></span><span data-i18n="optionsButtonSave"/></button>
               </div>
             </div>
             <span class="help-inline">
-              What is the maximum time (ms) the icon should blink after detecting new credentials
+              <span data-i18n="optionsBlinkTimeHelpText"></span>
               <br />
               Default: 7500
             </span>
@@ -52,17 +53,17 @@
         </p>
         <p>
           <div class="form-group">
-            <label for="blinkMinTimeout">Redirect Offset:</label>
+            <label for="blinkMinTimeout" data-i18n="optionsLabelRedirectOffset"></label>
             <div class="control-group">
               <div class="input-append">
                 <input type="number" id="blinkMinTimeout" placeholder="2000" value="2000" />
-                <button class="btn btn-sm btn-primary" id="blinkMinTimeoutButton" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                <button class="btn btn-sm btn-primary" id="blinkMinTimeoutButton" type="button"><span class="glyphicon glyphicon-floppy-disk"></span><span data-i18n="optionsButtonSave"/></button>
               </div>
             </div>
             <span class="help-inline">
-              What is the minimum time (ms) the icon should blink before deactivating due to page redirects.
+              <span data-i18n="optionsRedirectOffsetHelpText"></span>
               <br />
-              -1 to only use <i>Blink Time</i> ignoring Redirect Allowance (old behavior)
+              <span data-i18n="optionsRedirectOffsetHelpTextSecond"></span>
               <br />
               Default: -1, Recommended: 2000
             </span>
@@ -70,15 +71,15 @@
         </p>
         <p>
           <div class="form-group">
-            <label for="allowedRedirect">Redirect Allowance:</label>
+            <label for="allowedRedirect" data-i18n="optionsLabelRedirectAllowance"></label>
             <div class="control-group">
               <div class="input-append">
                 <input type="number" id="allowedRedirect" placeholder="1" value="1" />
-                <button class="btn btn-sm btn-primary" id="allowedRedirectButton" type="button"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
+                <button class="btn btn-sm btn-primary" id="allowedRedirectButton" type="button"><span class="glyphicon glyphicon-floppy-disk"></span><span data-i18n="optionsButtonSave"/></button>
               </div>
             </div>
             <span class="help-inline">
-              How many pages should the tab cycle through after the redirect offset before deactivating the icon
+              <span data-i18n="optionsRedirectAllowanceHelpText"></span>
               <br />
               Default: 1
             </span>
@@ -88,19 +89,19 @@
         <p>
           <div class="checkbox">
             <label class="checkbox">
-              <input type="checkbox" name="usePasswordGenerator" value="true" /> Activate password generator.
+              <input type="checkbox" name="usePasswordGenerator" value="true"/><span data-i18n="optionsCheckboxUsePasswordGenerator"/>
             </label>
             <span class="help-block">
-              For all password-fields there will be an icon added to generate a new password.
+              <span data-i18n="optionsUsePasswordGeneratorHelpText"></span>
               <br />
-              It is generated by KeePassXC with the profile for automatically generated passwords for new entries.</span>
+              <span data-i18n="optionsUsePasswordGeneratorHelpTextSecond"></span></span>
           </div>
         </p>
         <hr />
         <p>
           <div class="checkbox">
             <label class="checkbox">
-              <input type="checkbox" name="autoRetrieveCredentials" value="true" /> Automatically retrieve credentials.
+              <input type="checkbox" name="autoRetrieveCredentials" value="true" /><span data-i18n="optionsCheckboxAutoRetrieveCredentials"/>
             </label>
             <span class="help-block">KeePassXC-Browser will immediately retrieve the credentials when the tab is activated.</span>
           </div>
@@ -109,7 +110,7 @@
         <p>
           <div class="checkbox">
             <label class="checkbox">
-              <input type="checkbox" name="autoFillSingleEntry" value="false" /> Automatically fill-in single credentials entry.
+              <input type="checkbox" name="autoFillSingleEntry" value="false" /><span data-i18n="optionsCheckboxAutoFillSingleEntry"/>
             </label>
             <span class="help-block">If KeePassXC-Browser does only receive a single entry from KeePassXC it automatically fills this credentials into the found credential fields.</span>
             <span class="bg-danger">Warning! Using auto-fill is not safe. Use at your own risk.</span>
@@ -119,7 +120,7 @@
         <p>
           <div class="checkbox">
             <label class="checkbox">
-              <input type="checkbox" name="autoCompleteUsernames" value="true" /> Activate autocomplete for username fields.
+              <input type="checkbox" name="autoCompleteUsernames" value="true" /><span data-i18n="optionsCheckboxAutoCompleteUsernames"/>
             </label>
             <span class="help-block">For all username fields on a page a dropdown list appears which contains all available credentials.</span>
           </div>
@@ -128,19 +129,19 @@
         <p>
           <div class="checkbox">
             <label class="checkbox">
-              <input type="checkbox" name="showNotifications" value="true" /> Show notifications.
+              <input type="checkbox" name="showNotifications" value="true" /><span data-i18n="optionsCheckboxShowNotifications"/>
             </label>
             <span class="help-block">Allow KeePassXC-Browser to show notifications when user interaction is needed from the extension icon.</span>
           </div>
         </p>
         <hr />
         <p>
-          Check for updates of KeePassXC:
-          <br />
-          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="3" /> every 3 days</label>
-          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="7" /> every week</label>
-          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="30" /> every month</label>
-          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="0" /> never</label>
+          <div data-i18n="optionsRadioText"></div>
+
+          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="3" /><span data-i18n="optionsRadioThreeDays"/></label>
+          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="7" /><span data-i18n="optionsRadioWeek"/></label>
+          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="30" /><span data-i18n="optionsRadioMonth"/></label>
+          <label class="radio-inline"><input type="radio" name="checkUpdateKeePassXC" value="0" /><span data-i18n="optionsRadioNever"/></label>
         </p>
         <div class="help-block kphVersion">
           KeePassXC-Browser needs KeePassXC to retrieve credentials.
@@ -153,14 +154,14 @@
           </div>
           <div>
             Latest available version of KeePassXC: <em class="latestVersion"></em>
-            <button class="btn btn-sm btn-primary checkUpdateKeePassXC"><span class="glyphicon glyphicon-refresh"></span> Check for updates</button>
+            <button class="btn btn-sm btn-primary checkUpdateKeePassXC"><span class="glyphicon glyphicon-refresh"></span><span data-i18n="optionsButtonUpdate"/></button>
           </div>
         </div>
         <hr />
         <p>
           <div class="checkbox">
             <label class="checkbox">
-              <input type="checkbox" name="autoFillAndSend" value="1" /> Auto fill HTTP Auth dialogs and send them.
+              <input type="checkbox" name="autoFillAndSend" value="1" /><span data-i18n="optionsCheckboxAutoFillAndSend"/>
             </label>
             <span class="help-block">
               If credentials are found for a page and the login-type is an HTTP Auth request, KeePassXC-Browser tries to login with the first given credentials.
@@ -174,7 +175,7 @@
 
       <!-- Connected Databases -->
       <div class="tab" id="tab-connected-databases">
-        <h2>Connected Databases</h2>
+        <h2 data-i18n="optionsConnectedDatabasesTab"></h2>
         <hr />
         <p>
           The following KeePassXC databases are connected to KeePassXC-Browser.
@@ -228,7 +229,7 @@
 
       <!-- Specified credential fields -->
       <div class="tab" id="tab-specified-fields">
-        <h2>Specified credential fields</h2>
+        <h2 data-i18n="optionsSpecifiedFieldsTab"></h2>
         <hr />
         <p>
           If KeePassXC-Browser detects the wrong credential fields, you are able to specify the correct fields by yourself.
@@ -276,7 +277,7 @@
 
       <!-- About -->
       <div class="tab" id="tab-about">
-        <h2>About</h2>
+        <h2 data-i18n="optionsAboutTab"></h2>
         <hr />
         <p>
           <a target="_blank" href="https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk">Visit extension's page in Chrome Web store</a>
@@ -298,8 +299,8 @@
         <p>
           Contributors:<br>
           <a target="_blank" href="https://github.com/pfn/">Perry Nguyen</a>, <a target="_blank" href="http://lukas-schulze.de">Lukas Schulze</a>,
-          <a target="_blank" href="https://github.com/smorks">Andy Brandt</a>, <a target="_blank" href="https://github.com/varjolintu/">Sami Vänttinen</a>
-          and <a target="_blank" href="https://github.com/keepassxreboot/keepassxc-browser">KeePassXC Team</a>.
+          <a target="_blank" href="https://github.com/smorks">Andy Brandt</a>, <a target="_blank" href="https://github.com/varjolintu/">Sami Vänttinen</a>,
+          <a target="_blank" href="https://github.com/keepassxreboot/keepassxc-browser">KeePassXC Team</a>.
         </p>
       </div>
       <hr>
@@ -307,5 +308,7 @@
         <p>(C) 2017-2018 - KeePassXC Team</p>
       </div>
     </div> <!-- /container -->
+
+    <script type="text/javascript" src="../translate.js"></script>
   </body>
 </html>
