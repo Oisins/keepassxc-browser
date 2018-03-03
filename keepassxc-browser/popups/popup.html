@@ -19,10 +19,9 @@
         <button id="lock-database-button" class="btn btn-danger" title="Lock database"><span class="glyphicon glyphicon-lock"></span></button>
 
         <div id="update-available" class="alert alert-danger">
-          <p data-i18n="popupUpdateAvailable"/>
-          <p style="margin-left: 1em">
-            <a target="_blank" class="alert-link" href="https://keepassxc.org/download"><span data-i18n="popupDownloadNewVersion"/></a>.
-          </p>
+          <span data-i18n="popupUpdateAvailable"></span>
+          <br />
+          <a target="_blank" class="alert-link" href="https://keepassxc.org/download"><span data-i18n="popupDownloadNewVersion"/></a>.
         </div>
       </div>
 
@@ -49,17 +48,13 @@
       </div>
 
       <div id="configured-not-associated" style="display: none">
-        <p data-i18n="popupConfiguredNotAssociated"/>
-        <p style="margin-left: 1em">
-            <span class="bg-warning" id="unassociated-identifier"></span>
-        </p>
+        <span data-i18n="popupConfiguredNotAssociated"></span>
+        <span class="bg-warning" id="unassociated-identifier"></span>
       </div>
 
       <div id="configured-and-associated" style="display: none">
-        <p data-i18n="popupConfiguredAndAssociated"/>
-        <p style="margin-left: 1em">
-          <span class="bg-success" id="associated-identifier"></span>
-        </p>
+        <span data-i18n="popupConfiguredAndAssociated"></span>
+        <span class="bg-success" id="associated-identifier"></span>
         <div style="text-align: right">
           <button id="redetect-fields-button" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-list-alt"></span><span data-i18n="popupRedetectButton"/></button>
         </div>
