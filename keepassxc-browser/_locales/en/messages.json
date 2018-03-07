@@ -124,7 +124,7 @@
         "description": "Fill & copy button text in password generator."
     },
     "passwordGeneratorAlert": {
-        "message": "The generated password is longer than the allowed length!\nIt has been cut to fit the length.\n\nPlease remember the new password!",
+        "message": "Error:\nThe generated password is longer than the allowed length!\nIt has been cut to fit the length.\n\nPlease remember the new password!",
         "description": "A warning text shown in password generator."
     },
     "passwordGeneratorGenerateText": {
@@ -192,7 +192,7 @@
         "description": "Shown when no username is set in the credentials."
     },
     "credentialsNoLoginsFound": {
-        "message": "No logins found.",
+        "message": "Error:\nNo logins found.",
         "description": "Shown when no credentials are found for the current page."
     },
     "credentialsMultipleFound": {
@@ -208,11 +208,11 @@
         "description": "Alert message when no fields are found to fill in."
     },
     "fieldsNoPasswordField": {
-        "message": "Unable to find a password field",
+        "message": "Error:\nUnable to find a password field",
         "description": "Message shown when no password fields are found."
     },
     "rememberNothingChanged": {
-        "message": "Could not detect changed credentials",
+        "message": "Error:\nCould not detect changed credentials",
         "description": "Message shown when trying to save credentials that haven't changed."
     },
     "popupTitle": {
@@ -313,7 +313,7 @@
     },
     "popupMultiplePasswordFields": {
         "message": "KeePassXC-Browser found more than one password field on this page. To enter your logins, right-click on one of the password fields, and choose either of the commands:",
-        "description": "A popuo message shown when web page has multiple password fields."
+        "description": "A popup message shown when web page has multiple password fields."
     },
     "popupOr": {
         "message": " or ",
@@ -431,6 +431,10 @@
         "message": "Show notifications.",
         "description": "Show notifications checkbox text."
     },
+    "optionsCheckboxShowLoginNotifications": {
+        "message": "Show notification also when new credentials are detected.",
+        "description": "Show login notifications checkbox text."
+    },
     "optionsCheckboxAutoFillAndSend": {
         "message": "Auto fill HTTP Auth dialogs and send them.",
         "description": "Auto fill HTTP Auth dialogs and send them checkbox text."
@@ -508,7 +512,7 @@
         "description": "Autocomplete Usernames option help text."
     },
     "optionsShowNotificationsHelpText": {
-        "message": "Allow KeePassXC-Browser to show notifications when user interaction is needed from the extension icon.",
+        "message": "Allow KeePassXC-Browser to show notifications about alerts and when user interaction is needed from the extension icon.",
         "description": "Show notifications option help text."
     },
     "optionsAutoFillAndSendHelpText": {
